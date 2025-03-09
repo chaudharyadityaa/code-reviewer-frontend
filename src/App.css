@@ -1,0 +1,374 @@
+/* * {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html,
+body,
+#root{
+  height: 100%;
+  width: 100%;
+  
+}
+
+main{
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left, main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+
+}
+
+main .left{
+  background-color: #000000;
+  position: relative;
+}
+
+.left .code, .code pre{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: #0c0c0c;
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+
+
+}
+
+
+main .right{
+  background-color: #343434;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  
+  overflow: auto;
+} */
+
+
+
+
+
+/* ----------------------------------------------- */
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  
+
+  
+
+  outline: none !important;
+}
+
+html, body, #root ,.app-container {
+  /* height: 100%; */
+  min-height: 100vh;
+  width: 100%;
+  background: #1e1e2e;
+  color: white;
+  font-family: 'Fira Code', monospace;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.left, .right {
+  height: 100%;
+  border-radius: 0.7rem;
+  overflow: hidden;
+
+}
+
+.left {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.code {
+  flex-grow: 1;
+  overflow: auto;
+  max-height: calc(100% - 3rem);
+
+  
+  white-space: pre-wrap; 
+  word-wrap: break-word; 
+  outline: none; 
+  border: none;
+  
+
+
+
+}
+
+
+
+
+.right {
+  background: #2c2c3c;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  overflow: auto;
+}
+
+
+
+
+.right p {
+  color: rgba(255, 255, 255, 0.705); 
+  font-weight: 400; 
+  font-size: 1.2rem; 
+  /* font-family: 'Inter', sans-serif;  */
+  text-align: center;
+  margin-top: 15px;
+}
+
+
+
+.code pre {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  border-radius: 0.7rem;
+}
+
+.review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.review:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.6);
+}
+
+.review.loading {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.resizer {
+  width: 5px;
+  cursor: ew-resize;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background 0.3s;
+}
+
+.resizer:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.left .code::-webkit-scrollbar {
+  width: 6px;
+}
+
+.left .code::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.left .code::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+.code pre, .code textarea {
+  line-height: 1.5 !important; 
+  white-space: pre-wrap; 
+  word-wrap: break-word; 
+}
+
+
+
+
+
+.resizer {
+  width: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: ew-resize;
+  transition: background 0.3s;
+}
+.resizer:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+
+.review-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.review-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.6);
+}
+
+
+
+
+/*  */
+
+/* Apply background to the whole page, including Navbar */
+.app-container {
+  height: 100vh;  /* Full page height */
+  width: 100vw;   /* Full page width */
+  background: #1e1e2e;
+  color: white;
+}
+
+/* Ensure the main content fills remaining space */
+main {
+  flex-grow: 1;
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #1e1e2e;
+}
+
+
+
+.clear-btn-container {
+  display: flex;
+  justify-content: flex-start; /* Aligns button to the right */
+  margin-top: 10px;
+}
+
+.clear-btn {
+  padding: 8px 12px;
+  background: rgb(163, 79, 79);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  font-size: 14px;
+}
+
+.clear-btn:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
+
+.right {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Header for AI Review */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Placeholder inside a bar */
+.review-placeholder {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 15px;
+}
+
+/* Copy Review Button */
+.copy-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s ease;
+  border: none;
+}
+
+.copy-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.6);
+}
+
+.copy-btn:active {
+  background: #4e0db9;
+}
+
+
+
+
+
+
+
+
+/* ---------------------------------------------- */

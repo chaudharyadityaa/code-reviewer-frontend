@@ -1,0 +1,53 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #1e1e2e;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-actions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .icon-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .icon-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Ensure file input is hidden */
+  .icon-btn input {
+    display: none;
+  }
+
+
+  .app-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.2s;
+
+    cursor: pointer;
+    user-select: none;
+
+  }
+  
+  .app-title:hover {
+    transform: scale(1.05);
+  }
+  
+  
